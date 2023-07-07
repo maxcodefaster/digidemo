@@ -1,0 +1,7 @@
+{
+  "name": "digiDemo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
