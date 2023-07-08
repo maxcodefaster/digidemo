@@ -7,6 +7,10 @@ Angular Ionic App using the PokeAPI to display a list of Pokemon and their detai
 
 [https://digidemo-pokedex.vercel.app/](https://digidemo-pokedex.vercel.app/)
 
+### PW:
+TelOTP: 123456
+EMAIL: 'pw'
+
 ## Getting Started
 
 ### Prerequisites
