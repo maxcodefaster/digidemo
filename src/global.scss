@@ -24,3 +24,17 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+@import 'theme/css-utils';
+@import 'theme/misc-ui-elements';
+
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+img {
+  -webkit-user-drag: none;
+}

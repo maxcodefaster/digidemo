@@ -10,7 +10,8 @@
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "airbnb-typescript"
       ],
       "rules": {
         "@angular-eslint/component-class-suffix": [
@@ -34,7 +35,19 @@
             "prefix": "app",
             "style": "camelCase"
           }
-        ]
+        ],
+        "no-param-reassign": "warn",
+        "no-restricted-syntax": "warn",
+        "prefer-spread": "warn",
+        "no-await-in-loop": "warn",
+        "@typescript-eslint/prefer-for-of": "warn",
+        "no-continue": "warn",
+        "no-bitwise": "warn",
+        "react/jsx-filename-extension": "off",
+        "@typescript-eslint/lines-between-class-members": "off",
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "@typescript-eslint/dot-notation": "off"
       }
     },
     {

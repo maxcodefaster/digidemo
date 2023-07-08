@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-back-button icon="chevron-back-outline" defaultHref="/enter-digi-demo" slot="start"></ion-back-button>
+    <ion-title>Create account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollY]="false">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+
+      <ion-col>
+        <h1>Enter your Email address</h1>
+      </ion-col>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+
+    </ion-row>
+    <ion-row class="ion-padding-top">
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+
+      <ion-col>
+        <form (ngSubmit)="setEmail()" [formGroup]="setEmailForm" autocomplete="on">
+          <ion-input #emailInput placeholder="Email" formControlName="email" autocapitalize="off" autocorrect="off"
+                     maxlength="40" name="email" type="email" clearInput="true" class="ion-margin-bottom"></ion-input>
+
+          <ion-text class="ion-margin-vertical" color="medium">
+            <sub>
+              By continuing you agree to digi's
+              <ion-text routerLink="/toc" color="medium"><u>Terms and conditions</u></ion-text>
+            </sub>
+          </ion-text>
+
+          <ion-button type="submit" class="ion-margin-vertical" [disabled]="loading" expand="block">
+            <span>{{ loading ? 'Setting email...' : 'Continue'}}</span>
+          </ion-button>
+        </form>
+      </ion-col>
+
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,130 @@
+// ion back button
+ion-back-button {
+  color: var(--ion-text-color);
+}
+
+// responsive main grid
+.main-grid {
+  height: 100%;
+  padding: 0;
+
+  ion-row,
+  ion-col {
+    height: 100%;
+    padding: 0;
+  }
+}
+
+
+// divider
+.divider {
+  display: flex;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+  }
+}
+
+.line {
+  align-items: center;
+  color: #ccc;
+
+  &::before,
+  &::after {
+    height: 1px;
+    margin: 0 1em;
+  }
+}
+
+.one-line {
+  &::before,
+  &::after {
+    background: #ccc;
+  }
+}
+
+// progress bar
+ion-progress-bar::part(progress) {
+  transition: transform 0.5s linear !important;
+}
+
+// search bar
+ion-searchbar {
+  --background: transparent !important;
+  --cancel-button-color: var(--ion-color-medium) !important;
+
+  .searchbar-input {
+    border: 1px solid var(--ion-color-medium) !important;
+  }
+
+  .searchbar-search-icon {
+    width: 20px !important;
+  }
+}
+
+// ion item divider
+ion-item-divider {
+  --background: rgba(26, 26, 26, 0.5) !important;
+  --color: var(--ion-color-medium) !important;
+  backdrop-filter: blur(5px) saturate(180%);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+// ion item lines
+ion-item:last-child {
+  --inner-border-width: 0;
+}
+
+// standard buttons
+.button-solid {
+  --background: var(--digi-gradient-45deg);
+  --background-focused: var(--digi-gradient-45deg);
+  --border-radius: 26px;
+  --color: white;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  font-weight: bold;
+}
+
+.button-outline::part(native) {
+  background: linear-gradient(to right, var(--ion-background-color), var(--ion-background-color)), var(--digi-gradient-45deg);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  color: var(--ion-text-color);
+  font-size: 14px;
+}
+
+ion-button {
+  &.in-toolbar {
+    --color: var(--ion-text-color);
+  }
+}
+
+// ionic card
+ion-card {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+// phone input
+.iti {
+  width: 100%;
+}
+
+.iti__country-list {
+  background: var(--ion-card-background, var(--ion-background-color, white)) !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  color: var(--ion-text-color) !important;
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  width: 280px !important;
+}
+

@@ -5,8 +5,20 @@ const config: CapacitorConfig = {
   appName: 'digiDemo',
   webDir: 'www',
   server: {
-    androidScheme: 'https'
-  }
+    androidScheme: 'https',
+  },
+  plugins: {
+    Keyboard: {
+      resize: 'body',
+      style: 'dark',
+      resizeOnFullScreen: true,
+    },
+    SplashScreen: {
+      launchAutoHide: false,
+      androidScaleType: 'CENTER_CROP',
+      splashImmersive: true,
+    },
+  },
 };
 
 export default config;

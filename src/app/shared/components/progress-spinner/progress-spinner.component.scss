@@ -1,0 +1,16 @@
+svg {
+  transform: rotate(-90deg);
+}
+
+.progress-circle-background {
+  fill: none;
+  stroke: var(--ion-background-color);
+}
+
+.progress-circle {
+  fill: none;
+  stroke-dasharray: 100 100;
+  stroke-linecap: round;
+  transition-property: stroke-dashoffset;
+  transition-timing-function: linear;
+}

@@ -1,0 +1,54 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-back-button icon="chevron-back-outline" defaultHref="/enter-digi-demo" slot="start"></ion-back-button>
+    <ion-title>{{ signUp ? 'Create account' : 'Sign in'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollY]="false">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+      <ion-col>
+        <h1>Enter your mobile number</h1>
+        <p>Please confirm your country code and<br>enter your mobile number.</p>
+      </ion-col>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding-top">
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+      <ion-col>
+        <form (ngSubmit)="phoneAuth()" [formGroup]="phoneAuthForm" autocomplete="on">
+
+          <input #phoneInput type="number" id="phone" name="phone" formControlName="phone" maxlength="20"
+                 class="phone-input">
+
+          <div class="input-warnings ion-padding-top" [class.touched]="phone?.dirty || phone?.touched">
+            <div *ngIf="phone?.errors?.['IS_POSSIBLE']" class="warning">
+              <ion-icon name="alert-circle-outline"></ion-icon>
+              <ion-label>Not a valid number</ion-label>
+            </div>
+            <div *ngIf="phone?.errors?.['TOO_SHORT'] || phone?.errors?.['minLength']" class="warning">
+              <ion-icon name="alert-circle-outline"></ion-icon>
+              <ion-label>Number to short</ion-label>
+            </div>
+            <div *ngIf="phone?.errors?.['TOO_LONG'] || phone?.errors?.['maxLength']" class="warning">
+              <ion-icon name="alert-circle-outline"></ion-icon>
+              <ion-label>Number to long</ion-label>
+            </div>
+            <div *ngIf="phone?.errors?.['NOT_A_NUMBER'] || phone?.errors?.['pattern']" class="warning">
+              <ion-icon name="alert-circle-outline"></ion-icon>
+              <ion-label>Only numbers</ion-label>
+            </div>
+          </div>
+
+          <ion-button type="submit" class="ion-margin-vertical ion-margin-bottom" expand="block"
+                      [disabled]="loading || !phoneAuthForm.valid">
+            <span>{{ loading ? 'Loading' : 'Send code'}}</span>
+          </ion-button>
+        </form>
+      </ion-col>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

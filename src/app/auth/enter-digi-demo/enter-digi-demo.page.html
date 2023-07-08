@@ -1,0 +1,32 @@
+<ion-content [scrollY]="false">
+  <ion-grid class="height-100">
+    <ion-row class="logo-row">
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+      <ion-col class="flex ion-align-items-center ion-justify-content-center">
+        <h1>DigiDemo</h1>
+      </ion-col>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+      <ion-col>
+        <ion-button expand="block" fill="solid" class="ion-margin" [routerLink]="'/auth-method'"
+                    [queryParams]="{auth: 'signup'}">
+          Create account
+        </ion-button>
+        <ion-button expand="block" fill="outline" class="ion-margin" [routerLink]="'/auth-method'"
+                    [queryParams]="{auth: 'signin'}">
+          Sign in
+        </ion-button>
+
+        <div class="width-100 flex ion-justify-content-center">
+          <ion-button class="ion-text-center" color="medium" size="small" fill="clear"
+                      (click)="null">
+            <sub>Forgot password?</sub>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

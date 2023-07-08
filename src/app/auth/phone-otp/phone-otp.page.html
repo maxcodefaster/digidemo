@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>{{ signUp ? 'Create account' : 'Sign in'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollY]="false">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+
+      <ion-col>
+        <h1>Enter 6-digit code</h1>
+        <p>Your code was sent to {{phoneNumber}}</p>
+      </ion-col>
+
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+    </ion-row>
+    <ion-row class="flex ion-justify-content-center code-input">
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+
+      <ion-col>
+        <code-input #codeInput [codeLength]="6" (codeCompleted)="onCodeCompleted($event)" [disabled]="disabled">
+        </code-input>
+      </ion-col>
+
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+
+      <ion-col class="flex ion-justify-content-end ion-padding-end">
+        <app-progress-spinner [progress]="timeoutProgress" [delay]="'250ms'"></app-progress-spinner>
+      </ion-col>
+
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

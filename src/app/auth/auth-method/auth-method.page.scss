@@ -1,0 +1,18 @@
+ion-header {
+  background: transparent;
+  padding-top: var(--digi-padding-header-inset-top, 0);
+
+  ion-toolbar {
+    --background: transparent;
+  }
+}
+
+.logo-row {
+  height: 70%;
+
+  img,
+  h1 {
+    font-size: 4rem;
+    height: 5rem;
+  }
+}

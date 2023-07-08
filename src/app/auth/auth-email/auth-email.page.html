@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-back-button icon="chevron-back-outline" defaultHref="/enter-digi-demo" slot="start"></ion-back-button>
+    <ion-title>Sign in</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollY]="false">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+
+      <ion-col>
+        <h1>Enter your email address<br>and your password</h1>
+      </ion-col>
+
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+    </ion-row>
+    <ion-row class="ion-padding-top">
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+
+      <ion-col>
+        <form (ngSubmit)="emailAuth()" [formGroup]="emailAuthForm" autocomplete="on">
+          <ion-item>
+            <ion-input #emailInput placeholder="Email address" formControlName="email" autocapitalize="off"
+                       autocorrect="off" maxlength="75" name="username" type="email"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-input #passwordInput type="password" autocomplete="current-password" formControlName="password"
+                       placeholder="Password"></ion-input>
+            <a class="type-toggle" (click)="toggleShow()" tabindex="-1">
+              <ion-icon [name]="showPassword ? 'eye-outline' : 'eye-off-outline'"/>
+            </a>
+          </ion-item>
+
+          <ion-button class="ion-margin-vertical" size="small" fill="clear" (click)="null">
+            <sub>Forgot password?</sub>
+          </ion-button>
+
+          <ion-button type="submit" class="ion-margin-bottom" [disabled]="loading" expand="block">
+            <span>{{loading ? 'Signing you in' : 'Sign in'}}</span>
+          </ion-button>
+        </form>
+      </ion-col>
+
+      <ion-col class="ion-hide-md-down" size="3"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
